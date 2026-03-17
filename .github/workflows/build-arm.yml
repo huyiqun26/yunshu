@@ -21,11 +21,11 @@ jobs:
           pip install flask
           pip install pyinstaller
 
-      - name: Build for ARM64
+      - name: Build executable
         run: |
-          pyinstaller --onefile --noconsole --target-platform=linux-arm64 main.py
+          pyinstaller --onefile --noconsole main.py
 
-      - name: Upload result
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: linux-arm64-app
